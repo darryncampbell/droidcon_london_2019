@@ -11,6 +11,7 @@ import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import android.support.v4.app.NotificationManagerCompat
+import android.widget.Button
 import android.widget.Toast
 
 
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         createNotificationChannel()
+        val testButton = findViewById(R.id.btnTest) as Button
+        testButton.setOnClickListener {
+            showJoke(giveJoke())
+        }
         Log.d(LogTag, "On Create")
         if (intent.hasExtra("JokeRequest"))
         {
@@ -60,6 +65,7 @@ class MainActivity : AppCompatActivity() {
             .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle("Hilarious Joke")
             .setContentText(joke)
+            .setStyle(NotificationCompat.BigTextStyle().bigText(joke))
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
         with(NotificationManagerCompat.from(this)) {
             // notificationId is a unique int for each notification that you must define
