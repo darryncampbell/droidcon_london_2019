@@ -1,3 +1,6 @@
+*Please be aware that this application / sample is provided as-is for demonstration purposes without any guarantee of support*
+=========================================================
+
 # Droidcon London 2019
 ## Designing an Intent-based API
 This repository contains the files and applications created for Droidcon London 2019 to show the principles of how an Intent-based API would work
